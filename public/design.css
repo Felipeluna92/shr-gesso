@@ -1,0 +1,126 @@
+/* SHR Gesso — architectural forms, blue porcelain and generous white space. */
+:root{--navy:#092e60;--deep:#061e40;--ink:#1c3352;--muted:#667c97;--line:#e2eaf3;--bg:#f7f9fc;--radius:18px}
+body{background:var(--bg)}
+h1,h2,h3{font-weight:650}
+.primary,.white-button,.secondary{border-radius:10px;transition:transform .2s,box-shadow .2s,background .2s}
+.primary{background:linear-gradient(145deg,#204b80,#082b56);box-shadow:inset 0 1px 0 #ffffff28,0 4px 0 #051d3d,0 8px 16px #082b5617}
+.white-button{box-shadow:inset 0 1px 0 white,0 3px 0 #b5c7dd,0 8px 20px #00153030}
+.secondary{box-shadow:0 2px 3px #0c315208}
+.primary:active,.white-button:active{transform:translateY(2px);box-shadow:0 1px 0 #082b5633}
+.sidebar{background:#fff;border-color:#e4ebf3;box-shadow:4px 0 26px #0e2c5003}
+.sidebar .brand{padding-bottom:18px;border-bottom:1px solid #edf1f6}
+.sidebar nav button{border-radius:11px;transition:background .2s,transform .2s}
+.sidebar nav button.active{background:linear-gradient(120deg,#0c3264,#214d81);box-shadow:0 6px 14px #082b5620,inset 0 1px 0 #ffffff20}
+.nav-label{color:#6d8097;font-size:9px}
+.sidebar nav button:not(.active),.subtle{color:#667c96}
+.workspace-mark{box-shadow:inset 0 1px 0 #fff,0 3px 0 #d8e3f0}
+.topbar{background:#fff;border-color:#e9eef5}
+.breadcrumb strong{color:#29496d}
+.avatar{background:linear-gradient(135deg,#e9f1fc,#cbdcf0);box-shadow:0 3px 8px #0b2b5012}
+#content{padding-top:30px}
+.welcome{display:grid;grid-template-columns:1.1fr 1fr;position:relative;isolation:isolate;overflow:hidden;min-height:300px;margin-bottom:28px;border-radius:23px;background:radial-gradient(ellipse at 85% 5%,#315c8c 0,transparent 53%),linear-gradient(115deg,#061f43,#0b3161);color:white;border:1px solid #244971;box-shadow:0 16px 32px -18px #06254c70,inset 0 1px 0 #ffffff1a}
+.welcome::before{content:'';position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(120deg,transparent 0,transparent 99px,#c3ddff06 100px,#c3ddff06 101px);pointer-events:none}
+.welcome-copy{padding:37px 0 30px 36px;z-index:2}
+.welcome .eyebrow{font-size:9px;letter-spacing:1.7px;color:#c0d4ee;display:flex;align-items:center;gap:7px;margin-bottom:19px}
+.welcome .eyebrow i{height:5px;width:5px;border-radius:50%;background:#c7dfff;box-shadow:0 0 0 4px #c7dfff12}
+.welcome h1{font-size:43px;letter-spacing:-1.8px;margin-bottom:12px;color:#fff;overflow-wrap:anywhere}
+.welcome p{font-size:15px;line-height:1.65;color:#b9cee9;margin-bottom:24px}
+.welcome-actions{display:flex;align-items:center;gap:22px}
+.welcome .white-button{padding:12px 16px;font-size:12px}
+.hero-link{display:flex;align-items:center;gap:5px;background:none;color:#e2edfc;font-size:12px;padding:12px 0}
+.hero-link .icon{height:14px;width:14px}
+.welcome-footnote{display:block;margin-top:25px;color:#91aed0;font-size:8px;letter-spacing:2px}
+.section-caption{display:flex;align-items:center;justify-content:space-between;margin:0 2px 15px;color:#375675;font-weight:600;font-size:12px}
+.section-caption>span:last-child{font-size:8px;letter-spacing:1.5px;color:#788ca4;font-weight:500}
+/* The plaque and floating tiles are real CSS geometry; no 3D library to load. */
+.spatial-brand{position:relative;min-width:0;min-height:310px;perspective:1000px;isolation:isolate;pointer-events:none}
+.brand-plinth{position:absolute;left:50%;top:46%;width:250px;height:190px;transform:translate(-50%,-50%) rotateX(12deg) rotateY(-17deg) rotateZ(8deg);transform-style:preserve-3d;animation:plaque-arrive .8s ease-out both}
+.plinth-layer,.logo-plaque{position:absolute;inset:0;border-radius:21px}
+.layer-back{background:linear-gradient(135deg,#416b99,#143964);transform:translate3d(20px,27px,-30px);box-shadow:1px 3px 0 #082345,10px 20px 30px #02163155;border:1px solid #6386ad66}
+.layer-mid{background:linear-gradient(135deg,#bed1e9,#7d9cbe);transform:translate3d(10px,13px,-15px);box-shadow:2px 4px 0 #416389;border:1px solid #cee0f3}
+.logo-plaque{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border:1px solid #fff;box-shadow:3px 5px 0 #a2b9d4,4px 8px 0 #7092ba,12px 18px 22px #00193432;overflow:hidden}
+.plaque-image{position:relative;width:220px;height:135px;overflow:hidden}
+.plaque-image img{position:absolute;width:250px;height:auto;max-width:none;left:-13px;top:-64px}
+.logo-plaque>span{font-size:6px;letter-spacing:1.7px;font-weight:650;color:#557499;margin:11px 0 0}
+.orbit{position:absolute;width:365px;height:365px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-20deg) scaleY(.62);border:1px solid #b8d7ff15;border-radius:50%;z-index:-1}
+.orbit-two{width:440px;height:440px;transform:translate(-50%,-50%) rotate(-20deg) scaleY(.62);border-style:dashed;opacity:.65}
+.scene-shadow{position:absolute;left:22%;right:15%;bottom:33px;height:20px;background:#00112d;filter:blur(18px);opacity:.35;z-index:-1;border-radius:50%}
+.floating-tile{position:absolute;display:grid;place-items:center;border-radius:14px;box-shadow:4px 5px 0 #234974,9px 14px 22px #001b3a55;transform:rotate(-12deg);border:1px solid #688bb3;background:linear-gradient(135deg,#426c9c,#1b4476);color:#dfecfc}
+.tile-one{width:58px;height:58px;top:40px;right:17%;animation:tile-float 7s ease-in-out infinite}
+.tile-one .icon{width:27px;height:27px}
+.tile-two{width:44px;height:44px;bottom:45px;left:13%;background:linear-gradient(135deg,#f9fcff,#bad0e9);color:#123968;border-color:#f0f6ff;box-shadow:3px 5px 0 #7192ba,8px 12px 20px #001b3a40;transform:rotate(15deg);animation:tile-float 7s 1s ease-in-out infinite}
+.stats{gap:16px;margin-bottom:28px}
+.stats article{border-color:#e0e9f3;border-radius:17px;padding:23px 20px;background:linear-gradient(130deg,#fff 50%,#f8fbff);box-shadow:0 4px 0 #e9eef5,0 9px 20px #12396205;transition:transform .2s,box-shadow .2s}
+.stats article>span{color:#617895;font-size:11px;margin-bottom:21px;padding-right:37px}
+.stats article>.icon{height:34px;width:34px;border-radius:10px;top:18px;right:16px;padding:8px;color:#244d7c;background:linear-gradient(135deg,#f7faff,#dce8f6);border:1px solid #d2e0f0;box-shadow:2px 3px 0 #c7d7eb;transform:rotate(-5deg)}
+.stats strong{font-size:29px;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.stats small{color:#72869f;line-height:1.5}
+.panel{box-shadow:0 5px 20px #13385804;border-color:#e0e8f2}
+.panel-heading{padding:24px}
+.panel-heading h2{color:#203f64}
+.panel-heading p,.quiet{color:#7286a0}
+.dark-panel{border:1px solid #244b77;background:linear-gradient(125deg,#0d3366,#173f70);border-radius:18px;box-shadow:0 6px 0 #dbe4f0,0 12px 22px #0b2e5a0b;padding:27px}
+.dark-panel h2{font-size:27px;line-height:1.25;max-width:240px}
+.dark-panel p{max-width:245px;color:#bacde5;position:relative;z-index:1}
+.dark-panel .white-button{position:relative;z-index:1}
+.dark-panel .eyebrow{color:#bad0e9;letter-spacing:1px;position:relative;z-index:1}
+.plaster-stack{position:absolute;width:110px;height:110px;right:-21px;bottom:37px;transform:rotate(-28deg) skewY(10deg);z-index:-1}
+.plaster-stack i{position:absolute;inset:0;background:linear-gradient(135deg,#7194bf66,#254e7f);border:1px solid #90aed144;border-radius:9px;box-shadow:3px 5px 0 #082649}
+.plaster-stack i:nth-child(1){transform:translate(-18px,28px)}
+.plaster-stack i:nth-child(2){transform:translate(-9px,14px)}
+.date-tile{background:linear-gradient(145deg,#fff,#eaf1fa);box-shadow:0 3px 0 #dce6f2;border-color:#d8e3f1}
+.initial{background:linear-gradient(135deg,#f2f7fd,#dfeaf7);box-shadow:0 2px 0 #d0deef}
+.counter{background:#e9f0fa;color:#426489;border:1px solid #dce6f4}
+.client-card{background:linear-gradient(135deg,#fff 65%,#f6faff);box-shadow:0 3px 0 #edf2f8;border-radius:15px}
+.calendar-toolbar{padding:22px}
+.weekdays{background:#f3f7fc}
+.weekdays span{color:#5d7696}
+.calendar-cell.selected{background:#edf4fd;box-shadow:inset 0 0 0 1px #b8cde7}
+.is-today .day-number{box-shadow:0 3px 7px #0b33622b}
+.cal-event{border-radius:5px}
+input,select,textarea{border-radius:9px;background:#fcfdff;border-color:#dce5f0}
+label{color:#486383}
+dialog{box-shadow:0 30px 100px #06234833;border:1px solid #e0e9f4}
+dialog::backdrop{background:#061b3d75;backdrop-filter:blur(5px)}
+.section-title>span{background:linear-gradient(135deg,#f4f8fe,#dfeaf8);box-shadow:0 2px 0 #cbdcee}
+.money-summary,.balance{background:linear-gradient(120deg,#f3f7fd,#eaf1fb);border-color:#dbe6f4}
+.upload-zone{background:#f7faff;border-color:#a9bfda}
+/* The entry page uses the same sculpted brand object as the workspace. */
+.auth{background:#fff;grid-template-columns:1.05fr 1fr}
+.auth-story{padding:56px 11% 60px;background:radial-gradient(ellipse at 95% 40%,#315d90 0,transparent 65%),linear-gradient(145deg,#061e40,#0b2e5c)}
+.auth-story::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent 0,transparent 99px,#c9e0ff06 100px,#c9e0ff06 101px);pointer-events:none}
+.auth-story h1{font-size:clamp(40px,4.1vw,62px);line-height:1.08;letter-spacing:-2px;position:relative;margin:20px 0}
+.auth-story p{font-size:14px;color:#bbcee6;max-width:340px;margin-bottom:0}
+.auth-story>.eyebrow{font-size:9px;letter-spacing:1.8px;color:#b5cbe7}
+.auth-story .spatial-brand{min-height:300px;margin:10px -30px 0}
+.auth-story .brand-plinth{width:270px;height:202px;top:48%}
+.auth-story .tile-one{right:12%;top:33px}
+.auth-story .tile-two{left:7%;bottom:44px}
+.auth-story small{color:#9ab5d7;font-size:10px;bottom:25px}
+.auth-pillars{display:flex;justify-content:space-between;border-top:1px solid #8aaacf30;padding-top:21px;gap:15px;color:#86a7d0;font-size:10px}
+.auth-pillars b{font-size:11px;color:#cbdcf1;margin-left:7px;font-weight:500}
+.auth-form{background:radial-gradient(ellipse at 100% 0,#eaf2fc55,transparent 55%),#fff;padding:45px}
+.auth-card{max-width:370px}
+.auth-card .brand{margin-bottom:28px}
+.auth-card .brand-image{height:125px}
+.auth-card h2{font-size:27px;letter-spacing:-.8px;color:#123763}
+.auth-card>p{font-size:13px;color:#6f849f}
+.auth-card label{font-size:12px}
+.auth-card input{padding:14px;background:#f9fbfe}
+.auth-card .primary{padding:15px;margin-top:4px}
+.auth-note{color:#7288a4;font-size:10px}
+@keyframes plaque-arrive{from{opacity:0;transform:translate(-50%,-44%) rotateX(12deg) rotateY(-17deg) rotateZ(8deg)}to{opacity:1;transform:translate(-50%,-50%) rotateX(12deg) rotateY(-17deg) rotateZ(8deg)}}
+@keyframes tile-float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@media(hover:hover){.primary:hover,.white-button:hover{transform:translateY(-2px)}.stats article:hover{transform:translateY(-3px);box-shadow:0 5px 0 #e2eaf5,0 15px 25px #1239620b}.client-card:hover{border-color:#bed0e5}.hero-link:hover{color:#fff}.sidebar nav button:hover{transform:translateX(2px)}}
+@media(max-width:1200px){.welcome-copy{padding-left:28px}.welcome h1{font-size:38px}.brand-plinth{width:220px;height:175px}.plaque-image{transform:scale(.9);margin:-6px}.tile-one{right:8%;top:37px}.tile-two{left:6%}.stats article{padding:21px 15px}.stats strong{font-size:25px}.stats article>span{font-size:10px}.stats article>.icon{right:12px}.stats small{font-size:9px}.welcome-actions{gap:16px}.welcome-footnote{font-size:7px;letter-spacing:1.6px}}
+@media(max-width:960px){.welcome{grid-template-columns:1.2fr 1fr;min-height:285px}.welcome h1{font-size:34px}.welcome-copy{padding:30px 0 26px 24px}.welcome p{font-size:13px}.welcome .eyebrow{font-size:7px;letter-spacing:1px}.welcome-actions{gap:10px;flex-wrap:wrap}.hero-link{font-size:11px}.welcome .white-button{font-size:11px;padding:11px 12px}.welcome .spatial-brand{min-height:290px}.welcome .brand-plinth{width:177px;height:150px}.welcome .plaque-image{transform:scale(.74);margin:-17px}.welcome .logo-plaque>span{font-size:5px;letter-spacing:1px;margin-top:5px}.welcome .tile-one{width:43px;height:43px;right:8%;top:40px}.welcome .tile-two{width:34px;height:34px;bottom:45px;left:0}.stats strong{font-size:29px}.stats article>span{font-size:11px}.stats small{font-size:10px}.auth-story{padding:50px 10% 65px}.auth-story h1{font-size:42px}.auth-story .spatial-brand{margin:0 -35px}.auth-pillars{gap:6px}.auth-pillars b{font-size:10px;margin-left:3px}.auth-form{padding:30px}.auth-card h2{font-size:24px}}
+@media(max-width:700px){#content{padding-top:20px}.welcome{grid-template-columns:1fr;border-radius:20px;min-height:0;margin-bottom:24px}.welcome-copy{padding:26px 24px 0}.welcome h1{font-size:36px;margin-bottom:9px}.welcome .eyebrow{font-size:8px;letter-spacing:1.3px;margin-bottom:16px}.welcome p{font-size:14px;line-height:1.6;margin-bottom:20px}.welcome p br{display:none}.welcome-actions{gap:23px}.welcome .white-button{font-size:12px;padding:12px 16px}.hero-link{font-size:12px}.welcome-footnote{display:none}.welcome .spatial-brand{min-height:220px;margin-top:-3px}.welcome .brand-plinth{width:205px;height:146px;top:47%}.welcome .plaque-image{transform:scale(.77);margin:-17px}.welcome .logo-plaque>span{font-size:5px;margin-top:5px;letter-spacing:1.4px}.welcome .tile-one{width:45px;height:45px;top:15px;right:12%}.welcome .tile-two{width:34px;height:34px;left:13%;bottom:37px}.orbit{width:290px;height:290px}.orbit-two{width:350px;height:350px}.scene-shadow{bottom:20px}.section-caption{font-size:11px;margin-bottom:13px}.section-caption>span:last-child{font-size:7px}.stats{gap:12px}.stats article{padding:18px 14px;border-radius:14px}.stats article>span{font-size:10px;line-height:1.5;min-height:30px;padding-right:25px;margin-bottom:12px}.stats article>.icon{width:28px;height:28px;padding:6px;right:11px;top:17px;border-radius:8px}.stats strong{font-size:26px}.stats small{font-size:9px}.panel-heading{padding:21px 18px}.dark-panel{padding:26px}.dark-panel h2{font-size:28px}.dark-panel p{font-size:12px}.calendar-toolbar{padding:16px 8px}.auth{grid-template-columns:1fr}.auth-story{display:none}.auth-form{padding:30px 24px;min-height:100dvh;position:relative;overflow:hidden}.auth-form::before{content:'';position:absolute;width:160px;height:160px;border:1px solid #dce7f5;border-radius:28px;transform:rotate(32deg);top:-100px;right:-70px;box-shadow:8px 10px 0 #eff4fb,16px 20px 0 #f7f9fd;pointer-events:none}.auth-card{position:relative}.auth-card .brand{margin-bottom:35px}.auth-card h2{font-size:26px}.auth-card label{font-size:12px}.auth-card input{font-size:16px}.auth-note{font-size:10px}dialog{border-radius:18px}.page-heading .primary{min-width:44px;min-height:44px}.sidebar.open{box-shadow:20px 0 60px #092b5622}}
+@media(max-width:370px){.welcome-copy{padding:24px 20px 0}.welcome h1{font-size:32px}.welcome-actions{gap:16px}.stats strong{font-size:23px}.stats article{padding:17px 12px}.stats article>span{font-size:9px}.stats small{font-size:8px}.section-caption>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.brand-plinth{opacity:1}}
+@media print{body{background:#fff}.welcome,.section-caption{display:none}dialog#modal{box-shadow:none;border:0}.money-summary{background:#f3f6fa}.initial,.date-tile{box-shadow:none}}
+/* Long currency values remain readable on small cards. */
+.stats strong{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:700px){.stats:not(.finance-stats) article:nth-child(3) strong{font-size:21px;letter-spacing:-.6px}.finance-stats strong{font-size:21px}}
+.sidebar .brand-image{height:112px}
+.auth-card .brand-image{height:142px;margin-bottom:8px}
+.plaque-image{height:140px}
