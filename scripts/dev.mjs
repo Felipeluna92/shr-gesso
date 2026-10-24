@@ -1,0 +1,15 @@
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import {randomBytes} from 'node:crypto';
+if(process.env.VERCEL)throw Error('O servidor local não pode ser executado na Vercel.');
+process.env.STORAGE_DRIVER='local';
+fs.mkdirSync('.local-data',{recursive:true});
+const keyPath='.local-data/dev-keys.json';
+const keys=fs.existsSync(keyPath)?JSON.parse(fs.readFileSync(keyPath)): {SESSION_SECRET:randomBytes(32).toString('hex'),ADMIN_SETUP_KEY:randomBytes(24).toString('hex')};
+if(!fs.existsSync(keyPath))fs.writeFileSync(keyPath,JSON.stringify(keys),{mode:0o600});
+for(const [k,v]of Object.entries(keys))process.env[k]||=v;
+const {default:handler}=await import('../api/index.js');
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml'};
+const app=http.createServer(async(req,res)=>{const url=new URL(req.url,'http://localhost');if(url.pathname==='/api/index')return handler(req,res);let p;try{p=decodeURIComponent(url.pathname);}catch{res.writeHead(400);res.end();return;}if(p==='/')p='/index.html';const file=path.resolve('public','.'+p);if(!file.startsWith(path.resolve('public')+path.sep)){res.writeHead(403);res.end();return;}try{const content=fs.readFileSync(file);res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');const headers=JSON.parse(fs.readFileSync('vercel.json')).headers[0].headers;for(const h of headers)res.setHeader(h.key,h.value);res.end(content);}catch{res.writeHead(404);res.end('Não encontrado');}});
+app.listen(Number(process.env.PORT||3000),'127.0.0.1',()=>{console.log('SHR Gesso local: http://127.0.0.1:'+(process.env.PORT||3000));if(!fs.existsSync('.local-data/system/admin.json') && !process.env.QUIET_DEV)console.log('Código de ativação local:',process.env.ADMIN_SETUP_KEY);});
